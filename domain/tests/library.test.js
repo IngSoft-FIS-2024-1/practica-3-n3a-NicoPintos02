@@ -31,7 +31,22 @@ describe('Library', () => {
     expect(() => myLibrary.setName(123)).toThrow();
   });
   it('throw an error when setting an empty name', () => {
-    // TODO
+    expect(() => new Library('')).toThrow(Error);
+    expect(() => {
+      const library = new Library('Test Library');
+      library.setName('');
+    }).toThrow(Error);
   });
 
+  it('Library totalWords', () => {
+    const library = new Library('Test Library');
+    library.addBook('Test Title 1', 'Test Author 1', 100, 5000);
+    library.addBook('Test Title 2', 'Test Author 2', 200, 8000);
+    expect(library.totalWords()).toBe(13000);
+  });
+  
+  it('Library totalWords with no books', () => {
+    const library = new Library('Test Library');
+    expect(library.totalWords()).toBe(0);
+  });
 });
