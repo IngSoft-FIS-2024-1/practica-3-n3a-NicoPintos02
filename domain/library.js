@@ -4,20 +4,18 @@ class Library {
 
   #name;
   #inventory = [];
-  #totalWords;
-  #wordCount;
 
   constructor(name) {
     this.setName(name);
   }
 
   setName(name) {
-    if (typeof (name) !== "string") {
-      throw new Error("Name must be a string");
+    if (typeof (name) !== 'string') {
+      throw new Error('Name must be a string');
     }
     name = name.trim();
     if (name.length === 0) {
-      throw new Error("Name cannot be empty");
+      throw new Error('Name cannot be empty');
     }
     this.#name = name;
   }

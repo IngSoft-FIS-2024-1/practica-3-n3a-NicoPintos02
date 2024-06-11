@@ -30,32 +30,32 @@ class Book {
 
   setTitle(title) {
     if (typeof (title) !== 'string') {
-      throw new Error("Title must be a string");
+      throw new Error('Title must be a string');
     }
     title = title.trim();
     if (title.length === 0) {
-      throw new Error("Title cannot be empty");
+      throw new Error('Title cannot be empty');
     }
     this.#title = title;
   }
 
   setAuthor(author) {
     if (typeof (author) !== 'string') {
-      throw new Error("Author must be a string");
+      throw new Error('Author must be a string');
     }
     author = author.trim();
     if (author.length === 0) {
-      author = "Anónimo";
+      author = 'Anónimo';
     }
     this.#author = author;
   }
 
   setPages(pages) {
     if (typeof (pages) !== 'number' || isNaN(pages)) {
-      throw new Error("Pages must be a number");
+      throw new Error('Pages must be a number');
     }
     if (pages < 1) {
-      throw new Error("Pages must be at least 1");
+      throw new Error('Pages must be at least 1');
     }
     pages = Math.trunc(pages);
     this.#pages = pages;
@@ -63,10 +63,10 @@ class Book {
 
   setWords(words) {
     if (typeof (words) !== 'number' || isNaN(words)) {
-      throw new Error("Words must be a number");
+      throw new Error('Words must be a number');
     }
     if (words < 0) {
-      throw new Error("Words cannot be negative");
+      throw new Error('Words cannot be negative');
     }
     this.#words = words;
   }
